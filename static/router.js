@@ -33,8 +33,8 @@ export default function ({ mode, route }) {
   }
 
   window.$route = { push }
-  window.onload = () => render()
-  window.onpopstate = (e) => render()
+  window.addEventListener('load', () => render())
+  window.addEventListener('popstate', () => render())
 
   //模拟router-link
   const routerLinks = document.querySelectorAll('router-link')
