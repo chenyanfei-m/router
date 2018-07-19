@@ -7,7 +7,7 @@ const getHash = () => {
 }
 
 const getPathname = (mode) => {
-  if (mode === 'browser') return location.pathname
+  if (mode === 'history') return location.pathname
   if (mode === 'hash') return `/${getHash()}`
 }
 
@@ -27,7 +27,7 @@ export default function ({ mode, route }) {
 
   const push = (path, state) => {
     if (mode === 'hash') window.location.hash = path
-    if (mode === 'browser') history.pushState(state, null, path)
+    if (mode === 'history') history.pushState(state, null, path)
     window.$route.data = state
     render()
   }

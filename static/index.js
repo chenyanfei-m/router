@@ -3,6 +3,6 @@ import Router from './router.js'
 
 new Router({
   // mode: 'hash',
-  mode: 'browser',
+  mode: 'history',
   route: routes
 })
